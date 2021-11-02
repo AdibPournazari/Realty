@@ -38,18 +38,9 @@ document.getElementById("all-btn").addEventListener("click", ()=> {
 
 
 document.getElementById("flat-btn").addEventListener("click", ()=>{
-flat[0].classList.add("show");
-flat[1].classList.add("show");
-flat[2].classList.add("show");
-flat[3].classList.add("show");
-villa[0].classList.remove("show");
-villa[1].classList.remove("show");
-villa[2].classList.remove("show");
-villa[3].classList.remove("show");
-house[0].classList.remove("show");
-house[1].classList.remove("show");
-house[2].classList.remove("show");
-house[3].classList.remove("show");
+  flats.forEach(x => x.classList.add("show")); //add "show" class to all flat types
+  const nonFlats = property.filter(x => !flat.includes(x));  //find non flats
+  nonFlats.forEach(x => x.classList.remove("show"));  //remove "show" class from anything not a flat
 })
 
 document.getElementById('villa-btn').addEventListener("click", ()=> {
